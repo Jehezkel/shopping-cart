@@ -1,40 +1,41 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 export const Header = () => {
   const [isExpanded, setisExpanded] = useState<boolean>(false);
 
   return (
-    <nav className="bg-white dark:bg-slate-800 dark:text-zinc-50 ">
+    <nav className="bg-white dark:bg-slate-800 dark:text-zinc-50">
       <div
         id="main-cointainer"
-        className="flex container items-center p-2 sm:justify-between"
+        className="flex container items-center p-2 w-full max-w-6xl mx-auto"
       >
         <div className="w-1/12 sm:hidden">
-          <a onClick={() => setisExpanded(!isExpanded)}>
+          <button onClick={() => setisExpanded(!isExpanded)}>
             <svg className="h-8 w-8 dark:fill-white" viewBox="0 0 20 20">
               <path d="M17.5 6h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path>
               <path d="M17.5 11h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path>
               <path d="M17.5 16h-15c-0.276 0-0.5-0.224-0.5-0.5s0.224-0.5 0.5-0.5h15c0.276 0 0.5 0.224 0.5 0.5s-0.224 0.5-0.5 0.5z"></path>
             </svg>
-          </a>
+          </button>
         </div>
         <div className="w-1/12 sm:hidden"></div>
         <div className="w-screen sm:w-auto text-center min-w-fit">
-          <a href="#" className="font-semibold">
+          <Link to="/" className="font-semibold text-xl">
             Shoping Cart
-          </a>
+          </Link>
         </div>
-        <div className="hidden sm:block ml-auto mr-2">
-          <a href="#" className="min-w-fit mr-2">
+        <div className="hidden sm:flex w-full mr-6 justify-end">
+          <Link to="" className="min-w-fit mr-6">
             Home
-          </a>
-          <a href="#" className="min-w-fit mr-2">
+          </Link>
+          <Link to="Products" className="min-w-fit mr-6">
             Shop
-          </a>
-          <a href="#" className="min-w-fit mr-2">
+          </Link>
+          <Link to="About" className="min-w-fit mr-6">
             About
-          </a>
+          </Link>
         </div>
-        <div className="flex min-w-fit w-2/12 sm:w-auto">
+        <div className="flex min-w-fit w-2/12 sm:w-auto sm:ml-auto">
           <div id="cart-icon" className="ml-auto min-w-fit sm:w-auto pr-2">
             <svg className="h-8 w-8 dark:fill-white" viewBox="0 0 20 20">
               <path d="M8 20c-1.103 0-2-0.897-2-2s0.897-2 2-2 2 0.897 2 2-0.897 2-2 2zM8 17c-0.551 0-1 0.449-1 1s0.449 1 1 1 1-0.449 1-1-0.449-1-1-1z"></path>
@@ -54,15 +55,21 @@ export const Header = () => {
       <div
         className={`${isExpanded ? "" : "hidden"} sm:hidden overflow-hidden`}
       >
-        <a href="#" className="block text-center py-2 hover:bg-slate-600">
+        <Link to="" className="block text-center py-2 hover:bg-slate-600">
           Home
-        </a>
-        <a href="#" className="block text-center py-2 hover:bg-slate-600">
+        </Link>
+        <Link
+          to="Products"
+          className="block text-center py-2 hover:bg-slate-600"
+        >
           Shop
-        </a>
-        <a href="#" className="block text-center pt-2 pb-2 hover:bg-slate-600">
+        </Link>
+        <Link
+          to="About"
+          className="block text-center pt-2 pb-2 hover:bg-slate-600"
+        >
           About
-        </a>
+        </Link>
       </div>
     </nav>
   );
