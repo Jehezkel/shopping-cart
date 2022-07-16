@@ -9,9 +9,9 @@ type Props = {
 };
 export const ContextProvider = ({ children }: Props) => {
   const products = [...Array(20)].map<Product>(() => ({
-    id: faker.random.alphaNumeric(),
+    id: faker.datatype.uuid(),
     name: faker.commerce.productName(),
-    price: Number(faker.commerce.price()),
+    price: Number(faker.commerce.price(1, 2000, 2)),
     image: faker.image.abstract(640, 480, true),
     inStock: faker.datatype.number({ max: 999, min: 0 }),
     fastDelivery: faker.datatype.boolean(),

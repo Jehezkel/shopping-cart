@@ -1,7 +1,7 @@
 export class Product{
     id!: string
     name!: string
-    price!: Number
+    price!: number
     image!: string
     inStock!: number
     fastDelivery!: boolean

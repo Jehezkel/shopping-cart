@@ -7,7 +7,7 @@ import { ContextProvider } from "/home/ezechiel/repos/shopping-cart/src/context/
 function App() {
   return (
     <ContextProvider>
-      <div className="w-screen h-screen bg-gray-200 dark:bg-slate-900">
+      <div className="w-screen min-h-screen bg-gray-200 dark:bg-slate-900">
         <Header></Header>
         <div className="items-center p-2 w-full max-w-6xl mx-auto">
           <Outlet />
